@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulario con lista</title>
+</head>
+<body bgcolor="#FAD7A0 ">
+    <h1>Formulario</h1>
+    <form id="miFormulario">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" required>
+        <br>
+        <br>
+        <label for="edad">Edad:</label>
+        <input type="number" id="edad" required>
+        <br>
+        <br>
+        <label for="grado">Grado:</label>
+        <input type="text" id="grado" required>
+        <br>
+        <br>
+        <button type="button" onclick="enviar()">enviar</button>
+    </form>
+
+    <h2>Lista</h2>
+    <ul id="lista">
+    </ul>
+
+    <script>
+        function enviar() {
+            var name = document.getElementById("nombre").value;
+            var ed = document.getElementById("edad").value;
+            var gra = document.getElementById("grado").value;
+            var lista = document.getElementById("lista");
+
+        
+            var miolista = document.createElement("li");
+            miolista.textContent = name;
+            lista.appendChild(miolista);
+
+             var miolista = document.createElement("li");
+            miolista.textContent = ed;
+            lista.appendChild(miolista);
+
+             var miolista = document.createElement("li");
+            miolista.textContent = gra;
+            lista.appendChild(miolista);
+
+            document.getElementById("name").value = "";
+            document.getElementById("ed").value = "";
+            document.getElementById("grad").value = "";
+        }
+
+        document.getElementById("miFormulario").addEventListener("submit", function(event) { 
+            event.preventDefault();
+            enviar();
+        });
+    </script>
+    <style>
+        input{
+            background-color: #ABEBC6 ;
+        }
+        button{
+            background-color: #AED6F1;
+        }
+        
+         ul{list-style:none;}
+        li::before{
+        content:"#";
+        margin-right:8px;
+        }
+    </style>
+</body>
+</html>

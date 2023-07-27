@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulario</title>
+</head>
+<body>
+    <h1>Formulario</h1>
+    <form id="miFormulario">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" >
+        <br>
+        <br>
+        <label for="correo">Correo Electronico:</label>
+        <input type="text" id="correo" >
+        <br>
+        <br>
+        <label for="contra">Contraseña:</label>
+        <input type="text" id="contra" >
+        <br>
+        <br>
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+        document.getElementById("miFormulario").addEventListener("submit", function(event) {
+            var name = document.getElementById("nombre").value;
+            var email = document.getElementById("correo").value;
+            var contraseña = document.getElementById("contra").value;
+
+
+            if (name.trim() === '' || email.trim() === '' || contraseña.trim() === '') {
+            
+                event.preventDefault();
+                alert("Por favor, completa todos los campos.");
+            }
+        });
+    </script>
+     <style>
+        
+        input{
+            background-color: #ABEBC6 ;
+        }
+        button{
+            background-color: #AED6F1;
+        }
+    </style>
+</body>
+</html>
